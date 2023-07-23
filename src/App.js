@@ -4,7 +4,7 @@ import myphoto from '../src/image/IMG_3656.jpeg';
 
 const ImageGallery = () => {
   const [modalContent, setModalContent] = useState(null);
-  const imagePath = '../src/image/';
+  const imagePath = './image/';
 
   const handleImageClick = (src) => {
     setModalContent(
@@ -22,7 +22,7 @@ const ImageGallery = () => {
     const fetchImages = async () => {
       const urls = await Promise.all(
         fileData.files.map(async (filename) => {
-          const imageUrl = await import(`${`../src/image/`}${filename}`);
+          const imageUrl = await import(`${`./image/`}${filename}`);
           return imageUrl.default;
         })
       );
